@@ -12,18 +12,27 @@
 
 class Particle {
     constructor(x, y) {
+        this.location = createVector(x, y);
+        this.velocity = createVector(random(-1 , 1), random(-1, 1));
+        this.acceleration = createVector(0, 0);
 
+        this.lifespan = 255;
     }
 
     update() {
-
+        this.lifespan--;
+        this.location.add(this.velocity);
     }
 
     draw() {
-
+        noStroke();
+        fill(255, this.lifespan);
+        ellipse(this.location.x, this.location.y, 10);
     }
 
     isDead() {
-
+        return this.lifespan <= 0;
     }
+
+    
 }

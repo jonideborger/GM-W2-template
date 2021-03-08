@@ -15,6 +15,7 @@
     "unused": false,
     "globals": {
       "console": true,
+      "Particle": true,
       "ADD": true,
       "ALT": true,
       "ARROW": true,
